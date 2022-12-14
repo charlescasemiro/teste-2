@@ -1,11 +1,10 @@
-replicaCount: __REPLICASET__
+replicaCount: 1
 
 # Runtime
 ASPNETCORE_ENVIRONMENT: "Development"
 ApplicationInsights__Enabled: "false"
 TZ: "America/Sao_Paulo"
 
-IngressPath: precision-care
 AllowedHosts: "*"
 
 # Recursos
@@ -17,7 +16,10 @@ cpuLimit: "400m"
 Name: "teste-dotnet-core"
 IngressPath: ""
 Host: "hml-teste-pipeline-dotnetcore.apps.osp.grupopardini.local"
-image.repository: "image-registry.openshift-image-registry.svc:5000/precisioncare-test-pipeline-hml/teste-dotnet-core"
-image.tag: "v1.1.82-develop.37"
-ingress.enabled: "true"
+image:
+  repository: "image-registry.openshift-image-registry.svc:5000/precisioncare-test-pipeline-hml/teste-dotnet-core"
+  tag: "v1.1.82-develop.37"
+
+ingress:
+  enabled: "true"
 
