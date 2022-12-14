@@ -4,7 +4,7 @@ metadata:
   name: {{ .Values.Name | default .Chart.Name }}
   labels:
     app: {{ .Values.Name | default .Chart.Name }}
-    chart: {{ .Values.Name | default .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    chart: "{{ .Values.Name | default .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
     revision: "{{ .Release.Revision }}"
@@ -18,14 +18,14 @@ spec:
     metadata:
       labels:
         app: {{ .Values.Name | default .Chart.Name }}
-        chart: {{ .Values.Name | default .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+        chart: "{{ .Values.Name | default .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
         release: {{ .Release.Name }}
         heritage: {{ .Release.Service }}
         revision: "{{ .Release.Revision }}"
     spec:
       containers:
       - name: {{ .Values.Name | default .Chart.Name }}
-        image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         ports:
         - containerPort: 8080
         envFrom:
@@ -66,4 +66,4 @@ spec:
       - name: "service-cert"
         secret:
           defaultMode: 420  
-          secretName: {{ .Values.Name | default .Chart.Name }}-cert       
+          secretName: "{{ .Values.Name | default .Chart.Name }}-cert"      
