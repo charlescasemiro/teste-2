@@ -2,11 +2,11 @@ apiVersion: v1
 entries:
   hp-template-netcore:
   - apiVersion: v2
-    created: "2022-12-14T15:41:58.82414-03:00"
+    created: "2022-12-14T16:00:53.074897-03:00"
     description: Definicoes para hp-template-netcore
-    digest: ed1d6bc820bc4b99c9f3960686823633adbfcb0be6dc0f41f6222e9b7efe3025
+    digest: 12be02b3928eb0f247f15565654009bc3a1c760c5ebc86cc66f25cd74f59a9d1
     name: hp-template-netcore
     urls:
     - https://charlescasemiro.github.io/teste-2/hp-template-netcore-0.2.0.tgz
     version: 0.2.0
-generated: "2022-12-14T15:41:58.823828-03:00"
+generated: "2022-12-14T16:00:53.074583-03:00"
