@@ -24,44 +24,44 @@ spec:
         revision: "{{ .Release.Revision }}"
     spec:
       containers:
-      - name: {{ .Values.Name | default .Chart.Name }}
-        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-        ports:
-        - containerPort: 8080
-        envFrom:
-        - configMapRef:
-            name: {{ .Values.Name | default .Chart.Name }}
-        livenessProbe:
-          failureThreshold: 6
-          httpGet:
-            path: /healthz
-            port: 8080
-            scheme: HTTP
-          initialDelaySeconds: 15
-          periodSeconds: 10
-          successThreshold: 1
-          timeoutSeconds: 10
-        readinessProbe:
-          failureThreshold: 3
-          httpGet:
-            path: /healthz
-            port: 8080
-            scheme: HTTP
-          initialDelaySeconds: 5
-          periodSeconds: 5
-          successThreshold: 1
-          timeoutSeconds: 1
-        resources:
-          requests:
-            memory: "{{ .Values.memoryRequest }}"
-            cpu: "{{ .Values.cpuRequest }}"
-          limits:
-            memory: "{{ .Values.memoryLimit }}"
-            cpu: "{{ .Values.cpuLimit }}"         
-        volumeMounts:
-        - mountPath: /https
-          name: service-cert
-          readOnly: true
+        - name: {{ .Values.Name | default .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          ports:
+          - containerPort: 8080
+          envFrom:
+          - configMapRef:
+              name: {{ .Values.Name | default .Chart.Name }}
+          livenessProbe:
+            failureThreshold: 6
+            httpGet:
+              path: /healthz
+              port: 8080
+              scheme: HTTP
+            initialDelaySeconds: 15
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 10
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /healthz
+              port: 8080
+              scheme: HTTP
+            initialDelaySeconds: 5
+            periodSeconds: 5
+            successThreshold: 1
+            timeoutSeconds: 1
+          resources:
+            requests:
+              memory: "{{ .Values.memoryRequest }}"
+              cpu: "{{ .Values.cpuRequest }}"
+            limits:
+              memory: "{{ .Values.memoryLimit }}"
+              cpu: "{{ .Values.cpuLimit }}"         
+          volumeMounts:
+          - mountPath: /https
+            name: service-cert
+            readOnly: true
       volumes:
       - name: "service-cert"
         secret:
