@@ -1,4 +1,4 @@
-apiVersion: v1
+apiVersion: v2
 description: Definicoes para hp-template-netcore
 name: hp-template-netcore
-version: 0.1.0
+version: 0.2.0
