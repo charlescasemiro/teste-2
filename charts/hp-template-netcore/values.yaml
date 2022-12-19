@@ -18,7 +18,7 @@ IngressPath: ""
 Host: "hml-teste-pipeline-dotnetcore.apps.osp.grupopardini.local"
 image:
   repository: "image-registry.openshift-image-registry.svc:5000/precisioncare-test-pipeline-hml/teste-dotnet-core"
-  tag: "v1.2.0-develop.1"
+  tag: "v1.2.0-develop.2"
 
 ingress:
   enabled: "true"
